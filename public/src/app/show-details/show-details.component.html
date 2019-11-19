@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h3>Name</h3>
+        </div>
+        <div class="col-9">
+            {{details.name}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <h3>Quantity</h3>
+        </div>
+        <div class="col-9">
+            {{details.quantity}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <h3>Price</h3>
+        </div>
+        <div class="col-9">
+            {{details.price}}
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-info" [routerLink]="['/products']">BACK</button>
+        <button class="btn btn-danger" *ngIf="details.quantity==0" (click)="deleteProduct(details._id)">DELETE</button>
+    </div>
+</div>

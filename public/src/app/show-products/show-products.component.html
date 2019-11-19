@@ -1,0 +1,25 @@
+<button class="btn btn-success" [routerLink]="['/products/new']">New Product</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{ product._id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>${{ product.price }}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['/products/edit', product._id]">Edit</button>
+                <button class="btn btn-info" [routerLink]="['/products', product._id]">Details</button>
+            </td>
+        </tr>
+    </tbody>
+    <router-outlet></router-outlet>
+</table>
